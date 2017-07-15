@@ -4,13 +4,16 @@
 angular.module('MsgApp', [])
 .controller('MsgController', MsgController);
 
-MsgController.$inject = ['$scope'];
+MsgController.$inject = ['$scope','$filter'];
 function MsgController($scope) {
   $scope.name = "Yaakov";
   $scope.stateOfBeing = "hungry";
 
   $scope.sayMessage = function () {
-    return "Yaakov likes to eat healthy snacks at night!";
+    var msg = "checking for filters";
+    var output = $filter('uppercase')(msg);
+    return output;
+//    return "Yaakov likes to eat healthy snacks at night!";
   };
 
   $scope.feedYaakov = function () {
