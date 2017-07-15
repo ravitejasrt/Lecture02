@@ -24,3 +24,8 @@ function AnnonateMe(name, job, blah) {
 console.log(DIController.toString());
 
 })();
+
+/*
+!function(){"use strict";function n(o,e,a){o.name="Yaakov",o.upper=function(){var n=e("uppercase");o.name=n(o.name)},console.log(a.annotate(n))}angular.module("DIApp",[]).controller("DIController",n),console.log(n.toString())}();
+
+*/
