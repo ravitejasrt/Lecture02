@@ -4,16 +4,16 @@
 angular.module('MsgApp', [])
 .controller('MsgController', MsgController);
 
-MsgController.$inject = ['$scope','$filter'];
-function MsgController($scope) {
+MsgController.$inject = ['$scope', '$filter'];
+function MsgController($scope, $filter) {
   $scope.name = "Yaakov";
   $scope.stateOfBeing = "hungry";
+  $scope.cookieCost = .45;
 
   $scope.sayMessage = function () {
-    var msg = "checking for filters";
+    var msg = "Yaakov likes to eat healthy snacks at night!";
     var output = $filter('uppercase')(msg);
     return output;
-//    return "Yaakov likes to eat healthy snacks at night!";
   };
 
   $scope.feedYaakov = function () {
@@ -22,3 +22,26 @@ function MsgController($scope) {
 }
 
 })();
+
+/*(function () {
+'use strict';
+
+angular.module('MsgApp', [])
+.controller('MsgController', MsgController);
+
+MsgController.$inject = ['$scope'];
+function MsgController($scope) {
+  $scope.name = "Yaakov";
+  $scope.stateOfBeing = "hungry";
+
+  $scope.sayMessage = function () {
+    return "Yaakov likes to eat healthy snacks at night!";
+  };
+
+  $scope.feedYaakov = function () {
+    $scope.stateOfBeing = "fed";
+  };
+}
+
+})();
+*/
